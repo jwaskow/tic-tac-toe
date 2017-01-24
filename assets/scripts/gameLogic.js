@@ -22,7 +22,7 @@ const checkWinner = function (board) {
       (board[6] === 'o' && board[7] === 'o' && board[8]) || (board[0] === 'o' && board[3] === 'o' && board[6]) ||
       (board[1] === 'o' && board[4] === 'o' && board[7]) || (board[2] === 'o' && board[5] === 'o' && board[8]) ||
       (board[0] === 'o' && board[4] === 'o' && board[8]) || (board[2] === 'o' && board[4] === 'o' && board[6])) {
-        console.log('o is the winner!')
+        console.log('o is the winner!');
       }
     };
 
