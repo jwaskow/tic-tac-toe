@@ -28,19 +28,7 @@ const checkWinner = function (board) {
       }
     };
 
-let changeTurn = function () {
-  for (let i = 1; i < board.length; i++) {
-    if (i % 2 === 0) {
-      store.store.turn = “o”;
-    }; else {
-      store.store.turn = “x”;
-    };
-};
 
-const enterBox0 = function (event) {
-    event.preventDefault();
-    board[0].push(store.store.turn);
-};
 
 const resetBoard = function () {
   for (let i = 0; i < board.length; i++) {
