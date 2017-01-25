@@ -41,6 +41,7 @@ const makeMove = function (num) {
       console.log('The game has already been won!');
       return;
     }
+
     if (board[num] !== '') {
       console.log('Please pick an empty square!');
       return 'Please pick an empty square!';
