@@ -29,7 +29,7 @@ const checkWinner = function (board) {
       }
     };
 
-const changeTurn = function (num) {
+const makeMove = function (num) {
     if (board[num] !== '') {
       console.log("Please pick an empty square!");
       return "Please pick an empty square!";
@@ -46,7 +46,7 @@ const changeTurn = function (num) {
 };
 
 const testGame = function (num) {
-  changeTurn(num);
+  makeMove(num);
   console.log(board);
   return checkWinner(board);
 };
@@ -64,7 +64,7 @@ const resetBoard = function () {
 
 module.exports = {
   board,
-  changeTurn,
+  makeMove,
   checkWinner,
   resetBoard,
 };

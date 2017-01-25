@@ -3,4 +3,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .col-xs-4 {
   border: 1px solid black;
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container-grid {
+  margin: 0 20%;
 }
