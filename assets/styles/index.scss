@@ -18,5 +18,22 @@ h1 {
 }
 
 .reset-board-button {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  box-shadow: 0 6px #617aa3;
+}
+
+.btn-primary:active {
+  box-shadow: 0 2px #617aa3;
+  transform: translateY(3px);
+}
+
+.btn-primary:focus {
+  outline: 0;
+}
+
+.account-modal-btn {
+  margin: 50px;
 }
