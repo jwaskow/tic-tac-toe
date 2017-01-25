@@ -1,6 +1,6 @@
 'use strict';
 
-const getFormFields = require('../../lib/get-form-fields');
+// const getFormFields = require('../../lib/get-form-fields');
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
@@ -22,5 +22,5 @@ const authEvents = require('./auth/events.js');
 $(() => {
   authEvents.addHandlers();
   gameLogic.addGameHandlers();
-  $('#resetBoardButton').on('click', gameLogic.resetBoard);
+  $('.reset-board-button').on('click', gameLogic.resetBoard);
 });

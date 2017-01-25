@@ -4,6 +4,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .col-xs-4 {
   border: 1px solid black;
   height: 100px;
+  font-size: 50px;
+  text-align: center;
 }
 
 h1 {
@@ -12,4 +14,9 @@ h1 {
 
 .container-grid {
   margin: 0 20%;
+  text-align: center;
+}
+
+.reset-board-button {
+  margin-bottom: 5px;
 }
