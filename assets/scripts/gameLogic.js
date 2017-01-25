@@ -40,6 +40,9 @@ const makeMove = function (num) {
     } else {
        board[num] = "o";
    }
+   for (let i = 0; i < board.length; i++) {
+     $(('#box' + [i]).text) = board[i];
+   }
      turnCount++;
      console.log(turnCount);
      return turnCount;
