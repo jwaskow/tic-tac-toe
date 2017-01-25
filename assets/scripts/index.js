@@ -21,5 +21,6 @@ const authEvents = require('./auth/events.js');
 // On document ready
 $(() => {
   authEvents.addHandlers();
+  gameLogic.addGameHandlers();
   $('#resetBoardButton').on('click', gameLogic.resetBoard);
 });

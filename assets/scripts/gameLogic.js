@@ -40,12 +40,16 @@ const makeMove = function (num) {
     } else {
        board[num] = "o";
    }
-   for (let i = 0; i < board.length; i++) {
-     $(('#box' + [i]).text) = board[i];
-   }
      turnCount++;
      console.log(turnCount);
      return turnCount;
+};
+
+const updateBoard = function () {
+  for (let i = 0; i < board.length; i++) {
+    let currentBox = ($('#box' + [i]));
+    currentBox.text = board[i];
+  }
 };
 
 const testGame = function (num) {
@@ -65,9 +69,15 @@ const resetBoard = function () {
 };
 
 
+const addGameHandlers = () => {
+  $('.col-xs-4').on('click', makeMove);
+};
+
 module.exports = {
   board,
   makeMove,
   checkWinner,
+  updateBoard,
   resetBoard,
+  addGameHandlers,
 };
