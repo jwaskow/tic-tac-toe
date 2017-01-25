@@ -85,6 +85,7 @@ const resetBoard = function () {
   }
 
   turnCount = 0;
+  gameOver = false;
   console.log(board);
 };
 
