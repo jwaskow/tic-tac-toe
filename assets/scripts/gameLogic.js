@@ -15,17 +15,14 @@ const checkWinner = function (board) {
       ((board[1] === 'x') && (board[4] === 'x') && (board[7] === 'x')) || ((board[2] === 'x') && (board[5] === 'x') && (board[8] === 'x')) ||
       ((board[0] === 'x') && (board[4] === 'x') && (board[8] === 'x')) || ((board[2] === 'x') && (board[4] === 'x') && (board[6] === 'x'))) {
         console.log('x is the winner!');
-        return 'x is the winner!';
 } else if ((board[0] === 'o' && board[1] === 'o' && board[2] === 'o') || (board[3] === 'o' && board[4] === 'o' && board[5] === 'o') ||
       (board[6] === 'o' && board[7] === 'o' && board[8] === 'o') || (board[0] === 'o' && board[3] === 'o' && board[6] === 'o') ||
       (board[1] === 'o' && board[4] === 'o' && board[7] === 'o') || (board[2] === 'o' && board[5] === 'o' && board[8] === 'o') ||
       (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') || (board[2] === 'o' && board[4] === 'o' && board[6] === 'o')) {
         console.log('o is the winner!');
-        return 'o is the winner!';
       }
       else if (turnCount > 8) {
         console.log('This game is a draw!');
-        return 'This game is a draw!';
       }
     };
 
@@ -47,22 +44,30 @@ const makeMove = function (num) {
 
 const updateBoard = function () {
   for (let i = 0; i < board.length; i++) {
-    let currentBox = ($('#box' + [i]));
-    currentBox.text = board[i];
+    if (board[i] === 'x') {
+      $('#'+i).text('X');
+    } else if (board[i] === 'o') {
+      $('#'+i).text('O');
+    }
   }
 };
 
-const testGame = function (num) {
-  makeMove(num);
+
+
+const testGame = function (event) {
+  event.preventDefault();
+  makeMove(parseInt(event.target.id));
   console.log(board);
+  updateBoard(parseInt(event.target.id));
   return checkWinner(board);
 };
 
-// resetBoard iterated through the board array and assigns each item an empty string
+// resetBoard iterates through the board array and assigns each item an empty string
 
 const resetBoard = function () {
   for (let i = 0; i < board.length; i++) {
     board[i] = '';
+    $('#'+i).text('');
   }
   turnCount = 0;
   console.log(board);
@@ -70,14 +75,22 @@ const resetBoard = function () {
 
 
 const addGameHandlers = () => {
-  $('.col-xs-4').on('click', makeMove);
+  $('#0').on('click', testGame);
+  $('#1').on('click', testGame);
+  $('#2').on('click', testGame);
+  $('#3').on('click', testGame);
+  $('#4').on('click', testGame);
+  $('#5').on('click', testGame);
+  $('#6').on('click', testGame);
+  $('#7').on('click', testGame);
+  $('#8').on('click', testGame);
 };
 
 module.exports = {
   board,
   makeMove,
   checkWinner,
-  updateBoard,
+  // updateBoard,
   resetBoard,
   addGameHandlers,
 };
