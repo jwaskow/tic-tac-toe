@@ -36,9 +36,9 @@ const makeMove = function (num) {
     }
 
     if (turnCount % 2 === 0) {
-       board[num] = "o";
-    } else {
        board[num] = "x";
+    } else {
+       board[num] = "o";
    }
      turnCount++;
      console.log(turnCount);

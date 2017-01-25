@@ -1,5 +1,7 @@
 'use strict';
 
+const getFormFields = require('../../lib/get-form-fields');
+
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 
@@ -12,11 +14,12 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example');
-require('./gameLogic');
+const gameLogic = require('./gameLogic');
 
 const authEvents = require('./auth/events.js');
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
+  $('#resetBoardButton').on('click', gameLogic.resetBoard);
 });
