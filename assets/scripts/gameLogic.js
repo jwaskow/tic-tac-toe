@@ -4,6 +4,8 @@ let board = ['', '', '', '', '', '', '', '', ''];  // board is an empty grid
 
 let turnCount = 0;
 
+let gameOver = false;
+
 // checkWinner checks if either player has a winning combination.
 // if any of the winning combos are 'true', a winner is declared.
 
@@ -17,6 +19,7 @@ const checkWinner = function (board) {
       ((board[0] === 'x') && (board[4] === 'x') && (board[8] === 'x')) ||
       ((board[2] === 'x') && (board[4] === 'x') && (board[6] === 'x'))) {
         console.log('x is the winner!');
+        gameOver = true;
       } else if ((board[0] === 'o' && board[1] === 'o' && board[2] === 'o') ||
        (board[3] === 'o' && board[4] === 'o' && board[5] === 'o') ||
        (board[6] === 'o' && board[7] === 'o' && board[8] === 'o') ||
@@ -26,12 +29,18 @@ const checkWinner = function (board) {
        (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') ||
        (board[2] === 'o' && board[4] === 'o' && board[6] === 'o')) {
         console.log('o is the winner!');
+        gameOver = true;
       } else if (turnCount > 8) {
         console.log('This game is a draw!');
+        gameOver = true;
       }
     };
 
 const makeMove = function (num) {
+    if (gameOver === true) {
+      console.log('The game has already been won!');
+      return;
+    }
     if (board[num] !== '') {
       console.log('Please pick an empty square!');
       return 'Please pick an empty square!';
