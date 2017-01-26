@@ -3,7 +3,7 @@
 const config = require('./config');
 const store = require('./store');
 
-const index = function () {
+const getIndex = function () {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'GET',
@@ -25,7 +25,7 @@ const create = function () {
 
 const show = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/games/:' + id,
+    url: config.apiOrigin + '/games/' + id,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -35,7 +35,7 @@ const show = function (id) {
 
 const update = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/games/:' + id,
+    url: config.apiOrigin + '/games/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -44,7 +44,7 @@ const update = function (id) {
 };
 
 module.exports = {
-  index,
+  getIndex,
   create,
   show,
   update,
