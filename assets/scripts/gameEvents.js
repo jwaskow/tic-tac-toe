@@ -22,7 +22,7 @@ const onCreate = function (event) {
 
 const onShow = function (event) {
   event.preventDefault();
-  let id = getFormFields(event.target);
+  let id = parseInt($('#game-id').val());
   gameApi.show(id)
     .then(gameUi.success)
     .catch(gameUi.failure);
@@ -30,7 +30,7 @@ const onShow = function (event) {
 
 const addAjaxHandlers = () => {
   $('#get-index').on('click', onIndex);
-  $('.reset-board-button').on('click', onCreate);
+  $('.create-board-button').on('click', onCreate);
   $('#showGameById').on('submit', onShow);
 };
 

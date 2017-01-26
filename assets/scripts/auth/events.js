@@ -26,6 +26,10 @@ const onSignIn = function (event) {
     })
     .then(ui.success)
     .catch(ui.failure);
+    if (store.store !== '') {
+      $('.reset-board-button').addClass('hidden');
+      $('.create-board-button').removeClass('hidden');
+    }
 };
 
 const onChangePassword = function (event) {
@@ -48,8 +52,11 @@ const onSignOut = function (event) {
       return store;
     })
     .then(ui.success)
-    .catch(ui.failure)
-    ;
+    .catch(ui.failure);
+    if (store.store === undefined) {
+      $('.reset-board-button').removeClass('hidden');
+      $('.create-board-button').addClass('hidden');
+    }
 };
 
 const addHandlers = () => {

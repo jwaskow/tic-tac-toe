@@ -20,6 +20,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-top: 30px;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 body {
   background: #bdede8;
 }

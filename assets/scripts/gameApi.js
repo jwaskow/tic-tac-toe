@@ -2,6 +2,7 @@
 
 const config = require('./config');
 const store = require('./store');
+// const gameLogic = require('./gameLogic');
 
 const getIndex = function () {
   return $.ajax({
