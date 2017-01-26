@@ -6,6 +6,12 @@ let turnCount = 0;
 
 let gameOver = false;
 
+let xWins = false;
+
+let oWins = false;
+
+let noneWins = false;
+
 // checkWinner checks if either player has a winning combination.
 // if any of the winning combos are 'true', a winner is declared.
 
@@ -19,6 +25,7 @@ const checkWinner = function (board) {
       ((board[0] === 'x') && (board[4] === 'x') && (board[8] === 'x')) ||
       ((board[2] === 'x') && (board[4] === 'x') && (board[6] === 'x'))) {
         console.log('x is the winner!');
+        xWins = true;
         gameOver = true;
       } else if ((board[0] === 'o' && board[1] === 'o' && board[2] === 'o') ||
        (board[3] === 'o' && board[4] === 'o' && board[5] === 'o') ||
@@ -29,9 +36,11 @@ const checkWinner = function (board) {
        (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') ||
        (board[2] === 'o' && board[4] === 'o' && board[6] === 'o')) {
         console.log('o is the winner!');
+        oWins = true;
         gameOver = true;
       } else if (turnCount > 8) {
         console.log('This game is a draw!');
+        noneWins = true;
         gameOver = true;
       }
     };
@@ -68,12 +77,23 @@ const updateBoard = function () {
   }
 };
 
+const winMessage = function () {
+  if (xWins === true) {
+    $('#declare-winner').text('X is the Winner!');
+  } else if (oWins === true) {
+    $('#declare-winner').text('O is the Winner!');
+  } else if (noneWins === true) {
+    $('#declare-winner').text('Nobody is the Winner!');
+  }
+};
+
 const testGame = function (event) {
   event.preventDefault();
   makeMove(parseInt(event.target.id));
   console.log(board);
   updateBoard(parseInt(event.target.id));
-  return checkWinner(board);
+  checkWinner(board);
+  return winMessage();
 };
 
 // resetBoard iterates through the board array and assigns each item an empty string
@@ -84,7 +104,11 @@ const resetBoard = function () {
     $('#' + i).text('');
   }
 
+  $('#declare-winner').text('');
   turnCount = 0;
+  xWins = false;
+  oWins = false;
+  noneWins = false;
   gameOver = false;
   console.log(board);
 };
@@ -105,6 +129,7 @@ module.exports = {
   board,
   makeMove,
   checkWinner,
+  winMessage,
   updateBoard,
   resetBoard,
   addGameHandlers,
