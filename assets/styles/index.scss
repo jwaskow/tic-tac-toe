@@ -9,8 +9,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background: #e2bbed;
 }
 
+.col-xs-4:hover {
+  background: #c6a3d1;
+}
+
 .declare-winner {
-  border: 1px solid black;
   height: 100px;
   font-size: 50px;
   text-align: center;
