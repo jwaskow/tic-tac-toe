@@ -2,8 +2,8 @@
 
 const success = (data) => {
   if (data) {
-     console.log(data);
-   }
+    console.log(data);
+  }
 };
 
 const onPatchSuccess = (data) => {

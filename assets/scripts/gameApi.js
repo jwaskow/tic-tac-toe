@@ -3,7 +3,6 @@
 const config = require('./config');
 const store = require('./store');
 const gameStore = require('./gameStore');
-// const gameLogic = require('./gameLogic');
 
 const getIndex = function () {
   return $.ajax({
@@ -49,8 +48,8 @@ const update = function (index, value) {
             "value": value,
           },
           "over": false,
-        }
-      }
+        },
+      },
   });
 };
 

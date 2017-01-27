@@ -12,6 +12,7 @@ const signInSuccess = (data) => {
   if (data) {
     console.log(data);
   }
+
   $('.create-board-button').removeClass('hidden');
   $('#get-index').removeClass('hidden');
   $('#showGameById').removeClass('hidden');
@@ -26,6 +27,7 @@ const signOutSuccess = (data) => {
   if (data) {
     console.log(data);
   }
+
   $('.create-board-button').addClass('hidden');
   $('.container-grid').addClass('hidden');
   $('#get-index').addClass('hidden');

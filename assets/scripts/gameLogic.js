@@ -48,8 +48,8 @@ const checkWinner = function (board) {
     };
 
 const makeMove = function (num) {
-  console.log(num);
-      if (gameOver === true) {
+    console.log(num);
+    if (gameOver === true) {
       console.log('The game has already been won!');
       return;
     }
@@ -64,6 +64,7 @@ const makeMove = function (num) {
     } else {
       board[num] = 'o';
     }
+
     let moveValue = board[num];
     console.log(moveValue);
     gameApi.update(num, moveValue);
