@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api');
 const ui = require('./ui');
+const gameUi = require('../gameUi');
 
 const store = require('../store');
 
@@ -24,14 +25,14 @@ const onSignIn = function (event) {
       store.user = response.user;
       return store.user;
     })
-    .then(ui.success)
+    .then(gameUi.signInSuccess)
     .catch(ui.failure);
-    if (store.store !== '') {
-      $('.reset-board-button').addClass('hidden');
-      $('.create-board-button').removeClass('hidden');
-      $('#get-index').removeClass('hidden');
-      $('#showGameById').removeClass('hidden');
-    }
+    // if (store.store !== '') {
+      // $('.reset-board-button').addClass('hidden');
+      // $('.create-board-button').removeClass('hidden');
+      // $('#get-index').removeClass('hidden');
+      // $('#showGameById').removeClass('hidden');
+    // };
 };
 
 const onChangePassword = function (event) {
@@ -53,14 +54,14 @@ const onSignOut = function (event) {
       delete store.user;
       return store;
     })
-    .then(ui.success)
+    .then(gameUi.signOutSuccess)
     .catch(ui.failure);
-    if (store.store === undefined) {
-      $('.reset-board-button').removeClass('hidden');
-      $('.create-board-button').addClass('hidden');
-      $('#get-index').addClass('hidden');
-      $('#showGameById').addClass('hidden');
-    }
+    // if (store.store === undefined) {
+    //   $('.reset-board-button').removeClass('hidden');
+    //   $('.create-board-button').addClass('hidden');
+    //   $('#get-index').addClass('hidden');
+    //   $('#showGameById').addClass('hidden');
+    // }
 };
 
 const addHandlers = () => {
