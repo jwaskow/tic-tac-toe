@@ -25,6 +25,5 @@ $(() => {
   authEvents.addHandlers();
   gameLogic.addGameHandlers();
   gameEvents.addAjaxHandlers();
-  $('.reset-board-button').on('click', gameLogic.resetBoard);
   $('.create-board-button').on('click', gameLogic.resetBoard);
 });

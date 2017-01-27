@@ -4,7 +4,6 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api');
 const ui = require('./ui');
-const gameUi = require('../gameUi');
 
 const store = require('../store');
 
@@ -25,7 +24,7 @@ const onSignIn = function (event) {
       store.user = response.user;
       return store.user;
     })
-    .then(gameUi.signInSuccess)
+    .then(ui.signInSuccess)
     .catch(ui.failure);
 };
 
@@ -43,22 +42,12 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault();
 
-  $('.reset-board-button').removeClass('hidden');
-  $('.create-board-button').addClass('hidden');
-  $('.container-grid').addClass('hidden');
-  $('#get-index').addClass('hidden');
-  $('#showGameById').addClass('hidden');
-  $('#signUpButton').removeClass('hidden');
-  $('#signInButton').removeClass('hidden');
-  $('#changePassButton').addClass('hidden');
-  $('#sign-out').addClass('hidden');
-
   api.signOut()
     .then(() => {
       delete store.user;
       return store;
     })
-    .then(ui.success)
+    .then(ui.signOutSuccess)
     .catch(ui.failure);
 };
 
