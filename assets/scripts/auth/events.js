@@ -29,6 +29,8 @@ const onSignIn = function (event) {
     if (store.store !== '') {
       $('.reset-board-button').addClass('hidden');
       $('.create-board-button').removeClass('hidden');
+      $('#get-index').removeClass('hidden');
+      $('#showGameById').removeClass('hidden');
     }
 };
 
@@ -56,6 +58,8 @@ const onSignOut = function (event) {
     if (store.store === undefined) {
       $('.reset-board-button').removeClass('hidden');
       $('.create-board-button').addClass('hidden');
+      $('#get-index').addClass('hidden');
+      $('#showGameById').addClass('hidden');
     }
 };
 
