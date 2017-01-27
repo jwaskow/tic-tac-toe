@@ -27,12 +27,6 @@ const onSignIn = function (event) {
     })
     .then(gameUi.signInSuccess)
     .catch(ui.failure);
-    // if (store.store !== '') {
-      // $('.reset-board-button').addClass('hidden');
-      // $('.create-board-button').removeClass('hidden');
-      // $('#get-index').removeClass('hidden');
-      // $('#showGameById').removeClass('hidden');
-    // };
 };
 
 const onChangePassword = function (event) {
@@ -49,26 +43,30 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault();
 
+  $('.reset-board-button').removeClass('hidden');
+  $('.create-board-button').addClass('hidden');
+  $('.container-grid').addClass('hidden');
+  $('#get-index').addClass('hidden');
+  $('#showGameById').addClass('hidden');
+  $('#signUpButton').removeClass('hidden');
+  $('#signInButton').removeClass('hidden');
+  $('#changePassButton').addClass('hidden');
+  $('#sign-out').addClass('hidden');
+
   api.signOut()
     .then(() => {
       delete store.user;
       return store;
     })
-    .then(gameUi.signOutSuccess)
+    .then(ui.success)
     .catch(ui.failure);
-    // if (store.store === undefined) {
-    //   $('.reset-board-button').removeClass('hidden');
-    //   $('.create-board-button').addClass('hidden');
-    //   $('#get-index').addClass('hidden');
-    //   $('#showGameById').addClass('hidden');
-    // }
 };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
-  $('#sign-out').on('submit', onSignOut);
+  $('#sign-out').on('click', onSignOut);
 };
 
 module.exports = {

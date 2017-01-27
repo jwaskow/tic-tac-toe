@@ -15,18 +15,12 @@ const signInSuccess = (data) => {
   $('.container-grid').removeClass('hidden');
   $('#get-index').removeClass('hidden');
   $('#showGameById').removeClass('hidden');
+  $('#signUpButton').addClass('hidden');
+  $('#signInButton').addClass('hidden');
+  $('#changePassButton').removeClass('hidden');
+  $('#sign-out').removeClass('hidden');
 };
 
-const signOutSuccesss = (data) => {
-  if (data) {
-    console.log(data);
-  }
-  $('.reset-board-button').removeClass('hidden');
-  $('.create-board-button').addClass('hidden');
-  $('.container-grid').addClass('hidden');
-  $('#get-index').addClass('hidden');
-  $('#showGameById').addClass('hidden');
-};
 
 const onPatchSuccess = (data) => {
   if (data) { console.log(data.game.cells); }
@@ -41,5 +35,4 @@ module.exports = {
   success,
   onPatchSuccess,
   signInSuccess,
-  signOutSuccesss,
 };
