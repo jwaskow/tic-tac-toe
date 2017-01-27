@@ -1,7 +1,13 @@
 'use strict';
 
 const success = (data) => {
-  if (data) { console.log(data); }
+  if (data) {
+     console.log(data);
+   }
+};
+
+const onPatchSuccess = (data) => {
+  if (data) { console.log(data.game.cells); }
 };
 
 const failure = (error) => {
@@ -11,4 +17,5 @@ const failure = (error) => {
 module.exports = {
   failure,
   success,
+  onPatchSuccess,
 };

@@ -2,6 +2,7 @@
 
 const config = require('./config');
 const store = require('./store');
+const gameStore = require('./gameStore');
 // const gameLogic = require('./gameLogic');
 
 const getIndex = function () {
@@ -34,13 +35,22 @@ const show = function (id) {
   });
 };
 
-const update = function (id) {
+const update = function (index, value) {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + id,
+    url: config.apiOrigin + '/games/' + gameStore.game.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
+    data: {
+        "game": {
+          "cell": {
+            "index": index,
+            "value": value,
+          },
+          "over": false,
+        }
+      }
   });
 };
 

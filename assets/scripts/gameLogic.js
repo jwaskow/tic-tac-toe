@@ -1,5 +1,8 @@
 'use strict';
 
+// const gameEvents = require('./gameEvents');
+const gameApi = require('./gameApi');
+
 let board = ['', '', '', '', '', '', '', '', ''];  // board is an empty grid
 
 let turnCount = 0;
@@ -46,7 +49,8 @@ const checkWinner = function (board) {
     };
 
 const makeMove = function (num) {
-    if (gameOver === true) {
+  console.log(num);
+      if (gameOver === true) {
       console.log('The game has already been won!');
       return;
     }
@@ -61,9 +65,11 @@ const makeMove = function (num) {
     } else {
       board[num] = 'o';
     }
+    let moveValue = board[num];
+    console.log(moveValue);
+    gameApi.update(num, moveValue);
 
     turnCount++;
-    console.log(turnCount);
     return turnCount;
   };
 
@@ -88,13 +94,18 @@ const winMessage = function () {
 };
 
 const testGame = function (event) {
-  event.preventDefault();
   makeMove(parseInt(event.target.id));
   console.log(board);
   updateBoard(parseInt(event.target.id));
   checkWinner(board);
   return winMessage();
 };
+
+// const boardPosition = function (id) {
+//   return (id);
+// };
+
+// const boardPositionValue = board[boardPosition()];
 
 // resetBoard iterates through the board array and assigns each item an empty string
 
@@ -112,6 +123,14 @@ const resetBoard = function () {
   gameOver = false;
   console.log(board);
 };
+//
+// const doMove = function (event) {
+//   event.preventDefault();
+//   // boardPosition(parseInt(event.target.id));
+//   testGame(parseInt(event.target.id));
+//   // gameEvents.onUpdate();
+// };
+
 
 const addGameHandlers = () => {
   $('#0').on('click', testGame);
@@ -133,4 +152,6 @@ module.exports = {
   updateBoard,
   resetBoard,
   addGameHandlers,
+  // boardPosition,
+  // boardPositionValue,
 };
