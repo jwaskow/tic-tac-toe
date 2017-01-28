@@ -20,9 +20,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-top: 30px;
 }
 
-.create-board-button {
-  margin:auto;
-  display:block;
+.centered-buttons {
+  text-align: center;
 }
 
 .hidden {
@@ -42,7 +41,7 @@ h1 {
   text-align: center;
 }
 
-.reset-board-button {
+.create-board-button {
   margin-bottom: 20px;
 }
 
