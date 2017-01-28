@@ -21,6 +21,8 @@ const signInSuccess = (data) => {
   $('#changePassButton').removeClass('hidden');
   $('#sign-out').removeClass('hidden');
   $('#declare-winner').removeClass('hidden');
+  $('#total-games-played').removeClass('hidden');
+  $('#show-total-games').removeClass('hidden');
 };
 
 const signOutSuccess = (data) => {
@@ -38,6 +40,8 @@ const signOutSuccess = (data) => {
   $('#sign-out').addClass('hidden');
   $('#declare-winner').addClass('hidden');
   $('#declare-winner').text('');
+  $('#total-games-played').addClass('hidden');
+  $('#show-total-games').addClass('hidden');
 };
 
 module.exports = {

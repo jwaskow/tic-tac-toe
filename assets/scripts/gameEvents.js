@@ -30,10 +30,23 @@ const onShow = function (event) {
     .catch(gameUi.failure);
 };
 
+const totalGamesPlayed = function (event) {
+  event.preventDefault();
+  gameApi.getIndex()
+    .then((response) => {
+      gameStore.games = response.games;
+      $('#show-total-games').text('You have played ' + gameStore.games.length + ' games.');
+      return gameStore.games.length;
+    })
+    .then(gameUi.success)
+    .catch(gameUi.failure);
+};
+
 const addAjaxHandlers = () => {
   $('#get-index').on('click', onIndex);
   $('.create-board-button').on('click', onCreate);
   $('#showGameById').on('submit', onShow);
+  $('#total-games-played').on('click', totalGamesPlayed);
 };
 
 module.exports = {
