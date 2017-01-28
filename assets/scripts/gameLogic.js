@@ -45,6 +45,7 @@ const checkWinner = function (board) {
         noneWins = true;
         gameOver = true;
       }
+
       gameApi.updateGameStatus(gameOver);
     };
 

@@ -8,6 +8,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 80px;
   text-align: center;
   background: #e2bbed;
+  @media screen and (max-width: 650px) {
+    height: 50px;
+    font-size: 40px;
+  }
 }
 
 .col-xs-4:hover {
@@ -21,6 +25,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-weight: bold;
   text-align: center;
   margin-top: 30px;
+  @media screen and (max-width: 650px) {
+    height: 40px;
+    font-size: 25px;
+    margin-top: 15px;
+  }
 }
 
 .already-won {
@@ -30,6 +39,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
+  @media screen and (max-width: 650px) {
+    height: 30px;
+    font-size: 25px;
+  }
 }
 
 .show-total-games {
@@ -57,11 +70,18 @@ h1 {
   font-family: 'Fredericka the Great', cursive;
   text-align: center;
   font-size: 100px;
+  @media screen and (max-width: 650px) {
+    font-size: 50px;
+  }
 }
 
 .container-grid {
-  margin: 0 20%;
+  margin: 0 30%;
   text-align: center;
+}
+
+.container-bottom-btns {
+  margin: 0 10%;
 }
 
 .create-board-button {
@@ -69,18 +89,25 @@ h1 {
 }
 
 .btn-primary {
+  background: #ba99ff;
   box-shadow: 0 6px #617aa3;
 }
 
 .btn-primary:active {
+  background: #9260f7;
   box-shadow: 0 2px #617aa3;
   transform: translateY(3px);
 }
 
 .btn-primary:focus {
+  background: #ba99ff;
   outline: 0;
 }
 
+.btn-primary:hover {
+  background: #9260f7;
+}
+
 .account-modal-btn {
-  margin: 20px;
+  margin: 5px;
 }
