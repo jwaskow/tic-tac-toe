@@ -62,8 +62,10 @@ const makeMove = function (num) {
 
     if (turnCount % 2 === 0) {
       board[num] = 'x';
+      $('#declare-winner').text('');
     } else {
       board[num] = 'o';
+      $('#declare-winner').text('');
     }
 
     let moveValue = board[num];
