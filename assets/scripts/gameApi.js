@@ -47,7 +47,21 @@ const update = function (index, value) {
             "index": index,
             "value": value,
           },
-          "over": false,
+        },
+      },
+  });
+};
+
+const updateGameStatus = function (over) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + gameStore.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+    data: {
+        "game": {
+          "over": over,
         },
       },
   });
@@ -58,4 +72,5 @@ module.exports = {
   create,
   show,
   update,
+  updateGameStatus,
 };
