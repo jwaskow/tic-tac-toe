@@ -49,15 +49,14 @@ const checkWinner = function (board) {
     };
 
 const makeMove = function (num) {
-    console.log(num);
     if (gameOver === true) {
-      console.log('The game has already been won!');
+      $('#already-won').text('The game has already been won!');
       return;
     }
 
     if (board[num] !== '') {
-      console.log('Please pick an empty square!');
-      return 'Please pick an empty square!';
+      $('#declare-winner').text('Please pick an empty square!');
+      return;
     }
 
     if (turnCount % 2 === 0) {
@@ -67,7 +66,6 @@ const makeMove = function (num) {
     }
 
     let moveValue = board[num];
-    console.log(moveValue);
     gameApi.update(num, moveValue);
 
     turnCount++;
@@ -112,6 +110,7 @@ const resetBoard = function () {
 
   $('.container-grid').removeClass('hidden');
   $('#declare-winner').text('');
+  $('#already-won').text('');
   turnCount = 0;
   xWins = false;
   oWins = false;
