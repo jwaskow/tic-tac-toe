@@ -1,17 +1,15 @@
 'use strict';
 
-const success = (data) => {
-  if (data) {
-    console.log(data);
-  }
+const success = () => {
+$('#status-box').text('Action Successful');
 };
 
-const onPatchSuccess = (data) => {
-  if (data) { console.log(data.game.cells); }
+const onPatchSuccess = () => {
+$('#status-box').text('Game successfully updated');
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
+  $('#status-box').text('There seems to have been an error');
 };
 
 module.exports = {

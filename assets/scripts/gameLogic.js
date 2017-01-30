@@ -1,6 +1,7 @@
 'use strict';
 
 const gameApi = require('./gameApi');
+const gameUi = require('./gameUi');
 
 let board = ['', '', '', '', '', '', '', '', ''];  // board is an empty grid/array
 
@@ -26,7 +27,6 @@ const checkWinner = function (board) {
       ((board[2] === 'x') && (board[5] === 'x') && (board[8] === 'x')) ||
       ((board[0] === 'x') && (board[4] === 'x') && (board[8] === 'x')) ||
       ((board[2] === 'x') && (board[4] === 'x') && (board[6] === 'x'))) {
-        console.log('x is the winner!');
         xWins = true;
         gameOver = true;
       } else if ((board[0] === 'o' && board[1] === 'o' && board[2] === 'o') ||
@@ -37,11 +37,9 @@ const checkWinner = function (board) {
        (board[2] === 'o' && board[5] === 'o' && board[8] === 'o') ||
        (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') ||
        (board[2] === 'o' && board[4] === 'o' && board[6] === 'o')) {
-        console.log('o is the winner!');
         oWins = true;
         gameOver = true;
       } else if (turnCount > 8) {
-        console.log('This game is a draw!');
         noneWins = true;
         gameOver = true;
       }
@@ -71,7 +69,9 @@ const makeMove = function (num) {
     }
 
     let moveValue = board[num];
-    gameApi.update(num, moveValue);
+    gameApi.update(num, moveValue)
+    .then(gameUi.onPatchSuccess)
+    .catch(gameUi.failure);
 
     turnCount++;
     return turnCount;
@@ -102,7 +102,6 @@ const winMessage = function () {
 // runs all the functions that make a move when a box is clicked
 const testGame = function (event) {
   makeMove(parseInt(event.target.id));
-  console.log(board);
   updateBoard();
   checkWinner(board);
   return winMessage();
@@ -124,7 +123,6 @@ const resetBoard = function () {
   oWins = false;
   noneWins = false;
   gameOver = false;
-  console.log(board);
 };
 
 // click handlers for each box on the board

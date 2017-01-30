@@ -58,6 +58,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
 }
 
+.status-box {
+  clear: both;
+  font-family: 'Amatic SC', cursive;
+  font-size: 18px;
+  margin: 20px;
+}
+
 .hidden {
   visibility: hidden;
 }

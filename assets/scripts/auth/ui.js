@@ -1,18 +1,24 @@
 'use strict';
 
-const success = (data) => {
-  if (data) { console.log(data); }
+const success = () => {
+$('#status-box').text('Action Successful');
 };
 
-const failure = (error) => {
-  console.error(error);
+const signUpSuccess = () => {
+  $('#status-box').text('Account Created');
+};
+
+const changePassSuccess = () => {
+  $('#status-box').text('Password Changed Successfully');
+};
+
+const failure = () => {
+$('#status-box').text('Theres seems to have been an error');
 };
 
 // On sign in, un-hide game board elements
-const signInSuccess = (data) => {
-  if (data) {
-    console.log(data);
-  }
+const signInSuccess = () => {
+$('#status-box').text('Sign In Successful');
 
   $('.create-board-button').removeClass('hidden');
   $('#get-index').removeClass('hidden');
@@ -28,10 +34,8 @@ const signInSuccess = (data) => {
 };
 
 // On sign out, hide game board elements
-const signOutSuccess = (data) => {
-  if (data) {
-    console.log(data);
-  }
+const signOutSuccess = () => {
+$('#status-box').text('Sign Out Successful');
 
   $('.create-board-button').addClass('hidden');
   $('.container-grid').addClass('hidden');
@@ -52,6 +56,8 @@ const signOutSuccess = (data) => {
 module.exports = {
   failure,
   success,
+  signUpSuccess,
   signInSuccess,
+  changePassSuccess,
   signOutSuccess,
 };
