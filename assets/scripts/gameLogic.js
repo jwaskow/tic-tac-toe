@@ -2,11 +2,11 @@
 
 const gameApi = require('./gameApi');
 
-let board = ['', '', '', '', '', '', '', '', ''];  // board is an empty grid
+let board = ['', '', '', '', '', '', '', '', ''];  // board is an empty grid/array
 
-let turnCount = 0;
+let turnCount = 0; // tracks the number of turns
 
-let gameOver = false;
+let gameOver = false; //
 
 let xWins = false;
 
