@@ -1,15 +1,15 @@
 'use strict';
 
 const success = () => {
-$('#status-box').text('Action Successful');
+  $('#status-box').text('Action Successful');
 };
 
 const createSuccess = () => {
   $('#status-box').text('New Game Successfully Created');
-}
+};
 
 const onPatchSuccess = () => {
-$('#status-box').text('Game successfully updated');
+  $('#status-box').text('Game successfully updated');
 };
 
 const failure = () => {

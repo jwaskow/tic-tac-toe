@@ -16,7 +16,8 @@ let oWins = false; // variable that tracks if o wins
 let noneWins = false; // variable that tracks if the game is a draw
 
 // checkWinner checks if either player has a winning combination.
-// if any of the winning combos are 'true', a winner is declared and the corresponding variable is made true
+// if any of the winning combos are 'true',
+// a winner is declared and the corresponding variable is made true
 
 const checkWinner = function (board) {
       if (((board[0] === 'x') && (board[1] === 'x') && (board[2] === 'x')) ||

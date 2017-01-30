@@ -1,7 +1,7 @@
 'use strict';
 
 const success = () => {
-$('#status-box').text('Action Successful');
+  $('#status-box').text('Action Successful');
 };
 
 const signUpSuccess = () => {
@@ -27,12 +27,12 @@ const changePassFail = () => {
 };
 
 const failure = () => {
-$('#status-box').text('Theres seems to have been an error');
+  $('#status-box').text('Theres seems to have been an error');
 };
 
 // On sign in, un-hide game board elements
 const signInSuccess = () => {
-$('#status-box').text('Sign In Successful');
+  $('#status-box').text('Sign In Successful');
 
   $('.create-board-button').removeClass('hidden');
   $('#get-index').removeClass('hidden');
@@ -50,7 +50,7 @@ $('#status-box').text('Sign In Successful');
 
 // On sign out, hide game board elements
 const signOutSuccess = () => {
-$('#status-box').text('Sign Out Successful.  Please Sign Up or Sign In to play again.');
+  $('#status-box').text('Sign Out Successful.  Please Sign Up or Sign In to play again.');
 
   $('.create-board-button').addClass('hidden');
   $('.container-grid').addClass('hidden');
