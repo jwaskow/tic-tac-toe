@@ -4,6 +4,7 @@ const gameApi = require('./gameApi');
 const gameStore = require('./gameStore');
 const gameUi = require('./gameUi');
 
+// These 4 functions activate the web requests in the gameApi file
 const onIndex = function (event) {
   event.preventDefault();
   gameApi.getIndex()

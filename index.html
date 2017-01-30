@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -15,7 +15,7 @@
     <body class="container-fluid">
 
 
-      <!-- Button trigger modal -->
+      <!-- These buttons activate the corresponding modal, except sign out which does not have a modal -->
       <div class="centered-buttons">
       <button type="button" class="btn btn-primary account-modal-btn" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
         Sign Up!
@@ -31,7 +31,7 @@
       </button>
     </div>
 
-      <!-- Modal -->
+      <!-- Modals for sign up, sign in, and change password -->
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -133,6 +133,7 @@
   </div>
 </div>
 
+<!-- Container containing game board -->
 <h1>Tic-Tac-Toe!</h1>
 <div class="centered-buttons">
 <button type="button" class="btn btn-primary create-board-button hidden">Create New Game</button>
@@ -155,9 +156,11 @@
   </div>
 </div>
 
+<!-- These 2 divs display messages to the user -->
 <div class="declare-winner hidden" id="declare-winner"></div>
 <div class="already-won hidden" id="already-won"></div>
 
+<!-- makes get index GET request and tells user their total number of games -->
 <div class="container-bottom-btns">
 <div class="col-sm-6 col-xs-12 centered-buttons">
 <button type="button" class="btn btn-primary hidden" id="total-games-played">How many games have I played?</button>

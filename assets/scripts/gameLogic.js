@@ -6,16 +6,16 @@ let board = ['', '', '', '', '', '', '', '', ''];  // board is an empty grid/arr
 
 let turnCount = 0; // tracks the number of turns
 
-let gameOver = false; //
+let gameOver = false; // variable that tracks if the game has been won
 
-let xWins = false;
+let xWins = false; // variable that tracks if x wins
 
-let oWins = false;
+let oWins = false; // variable that tracks if o wins
 
-let noneWins = false;
+let noneWins = false; // variable that tracks if the game is a draw
 
 // checkWinner checks if either player has a winning combination.
-// if any of the winning combos are 'true', a winner is declared.
+// if any of the winning combos are 'true', a winner is declared and the corresponding variable is made true
 
 const checkWinner = function (board) {
       if (((board[0] === 'x') && (board[1] === 'x') && (board[2] === 'x')) ||
@@ -49,6 +49,8 @@ const checkWinner = function (board) {
       gameApi.updateGameStatus(gameOver);
     };
 
+// checks if game is not over and if chosen position is empty, if so
+// it will assign the current move (x or o) to the correct position in the board array
 const makeMove = function (num) {
     if (gameOver === true) {
       $('#already-won').text('The game has already been won!');
@@ -75,6 +77,7 @@ const makeMove = function (num) {
     return turnCount;
   };
 
+// manipulates the text in the gameboard element to an x or o when makeMove updates the baord array
 const updateBoard = function () {
   for (let i = 0; i < board.length; i++) {
     if (board[i] === 'x') {
@@ -85,6 +88,7 @@ const updateBoard = function () {
   }
 };
 
+// If a win condition is satisfied, displays corresdponding message to user
 const winMessage = function () {
   if (xWins === true) {
     $('#declare-winner').text('X is the Winner!');
@@ -95,6 +99,7 @@ const winMessage = function () {
   }
 };
 
+// runs all the functions that make a move when a box is clicked
 const testGame = function (event) {
   makeMove(parseInt(event.target.id));
   console.log(board);
@@ -122,6 +127,7 @@ const resetBoard = function () {
   console.log(board);
 };
 
+// click handlers for each box on the board
 const addGameHandlers = () => {
   $('#0').on('click', testGame);
   $('#1').on('click', testGame);

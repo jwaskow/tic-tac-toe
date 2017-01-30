@@ -4,6 +4,8 @@ const config = require('./config');
 const store = require('./store');
 const gameStore = require('./gameStore');
 
+// These web requests get all the games, create a game on the server,
+// get a specific game by its id, and update the server with every move made and if the game is over
 const getIndex = function () {
   return $.ajax({
     url: config.apiOrigin + '/games',

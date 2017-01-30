@@ -13,7 +13,6 @@ $(() => {
 // const example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-require('./example');
 const gameLogic = require('./gameLogic');
 
 const authEvents = require('./auth/events.js');

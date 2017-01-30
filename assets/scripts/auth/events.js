@@ -7,6 +7,7 @@ const ui = require('./ui');
 
 const store = require('../store');
 
+// These 4 functions run the auth web requests in api.js
 const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);

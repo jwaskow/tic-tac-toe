@@ -3,6 +3,7 @@
 const config = require('../config');
 const store = require('../store');
 
+// These 4 functions run the web requests for authorization
 const signUp = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',

@@ -8,6 +8,7 @@ const failure = (error) => {
   console.error(error);
 };
 
+// On sign in, un-hide game board elements
 const signInSuccess = (data) => {
   if (data) {
     console.log(data);
@@ -26,6 +27,7 @@ const signInSuccess = (data) => {
   $('#show-total-games').removeClass('hidden');
 };
 
+// On sign out, hide game board elements
 const signOutSuccess = (data) => {
   if (data) {
     console.log(data);
