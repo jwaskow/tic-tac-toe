@@ -4,6 +4,10 @@ const success = () => {
 $('#status-box').text('Action Successful');
 };
 
+const createSuccess = () => {
+  $('#status-box').text('New Game Successfully Created');
+}
+
 const onPatchSuccess = () => {
 $('#status-box').text('Game successfully updated');
 };
@@ -15,5 +19,6 @@ const failure = () => {
 module.exports = {
   failure,
   success,
+  createSuccess,
   onPatchSuccess,
 };

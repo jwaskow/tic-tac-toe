@@ -19,7 +19,7 @@ const onCreate = function (event) {
       gameStore.game = response.game;
       return gameStore.game;
     })
-    .then(gameUi.success)
+    .then(gameUi.createSuccess)
     .catch(gameUi.failure);
 };
 
@@ -44,7 +44,7 @@ const totalGamesPlayed = function (event) {
 };
 
 const addAjaxHandlers = () => {
-  $('#get-index').on('click', onIndex);
+  $('#get-index').on('submit', onIndex);
   $('.create-board-button').on('click', onCreate);
   $('#showGameById').on('submit', onShow);
   $('#total-games-played').on('click', totalGamesPlayed);
@@ -52,4 +52,6 @@ const addAjaxHandlers = () => {
 
 module.exports = {
   addAjaxHandlers,
+  onIndex,
+  onShow,
 };

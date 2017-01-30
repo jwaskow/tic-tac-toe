@@ -6,10 +6,24 @@ $('#status-box').text('Action Successful');
 
 const signUpSuccess = () => {
   $('#status-box').text('Account Created');
+  $('#signUpModal').modal('hide');
+};
+
+const signUpFail = () => {
+  $('#sign-up-message').text('Either the email is not valid or the passwords do not match.');
+};
+
+const signInFail = () => {
+  $('#sign-in-message').text('The information is incorrect.');
 };
 
 const changePassSuccess = () => {
   $('#status-box').text('Password Changed Successfully');
+  $('#changePassModal').modal('hide');
+};
+
+const changePassFail = () => {
+  $('#change-pass-message').text('Please fill out the fields.');
 };
 
 const failure = () => {
@@ -31,11 +45,12 @@ $('#status-box').text('Sign In Successful');
   $('#already-won').removeClass('hidden');
   $('#total-games-played').removeClass('hidden');
   $('#show-total-games').removeClass('hidden');
+  $('#signInModal').modal('hide');
 };
 
 // On sign out, hide game board elements
 const signOutSuccess = () => {
-$('#status-box').text('Sign Out Successful');
+$('#status-box').text('Sign Out Successful.  Please Sign Up or Sign In to play again.');
 
   $('.create-board-button').addClass('hidden');
   $('.container-grid').addClass('hidden');
@@ -57,6 +72,9 @@ module.exports = {
   failure,
   success,
   signUpSuccess,
+  signUpFail,
+  signInFail,
+  changePassFail,
   signInSuccess,
   changePassSuccess,
   signOutSuccess,

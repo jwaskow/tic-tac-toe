@@ -59,6 +59,7 @@
           </label>
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
+        <div class="form-message" id="sign-up-message"></div>
       </form>
     </div>
       <div class="modal-footer">
@@ -91,6 +92,7 @@
             </label>
             <input type="submit" name="submit" value="Sign in!">
           </fieldset>
+          <div class="form-message" id="sign-in-message"></div>
         </form>
       </div>
       <div class="modal-footer">
@@ -124,6 +126,7 @@
 
             <input type="submit" name="submit" value="Change Password!">
           </fieldset>
+          <div class="form-message" id="change-pass-message"></div>
         </form>
       </div>
       <div class="modal-footer">
@@ -162,25 +165,13 @@
 
 <!-- makes get index GET request and tells user their total number of games -->
 <div class="container-bottom-btns">
-<div class="col-sm-6 col-xs-12 centered-buttons">
+<div class="col-xs-12 centered-buttons">
 <button type="button" class="btn btn-primary hidden" id="total-games-played">How many games have I played?</button>
 <div class= "show-total-games hidden" id="show-total-games"></div>
 </div>
-
-<div class="col-sm-6 col-xs-12 centered-buttons">
-<button type="button" class="btn btn-primary hidden" id="get-index">Get Game Index</button>
-
-<form class="hidden" id="showGameById">
-  <fieldset>
-    <legend>Enter ID # of Game to Show</legend>
-    <input type="text" name="ID#" id="game-id">
-    <input type="submit" name="submit" value="Show">
-</fieldset>
-</form>
-</div>
 </div>
 
-<div class="status-box" id="status-box"></div>
+<div class="status-box" id="status-box">Please Sign Up or Sign In to play.</div>
 
 </body>
 </html>
